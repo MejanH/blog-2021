@@ -1,5 +1,88 @@
 header {
   h1 {
+    cursor: pointer;
+    width: 70%;
+    margin: auto;
     text-align: center;
+    padding: 2rem;
+    border-bottom: 1px solid #e2e2e2;
+    &:hover {
+      color: teal;
+    }
+  }
+}
+.container {
+  margin: 3rem auto;
+  max-width: 50%;
+  @media (max-width: 900px) {
+    max-width: 80%;
+  }
+}
+
+// home page styles
+.articles {
+  .article-sum {
+    margin-bottom: 3rem;
+  }
+  .article-links {
+    a {
+      text-decoration: none;
+      color: teal;
+    }
+  }
+  .new-button {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    img {
+      display: block;
+      margin: auto;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .delete-article {
+    color: brown;
+    cursor: pointer;
+  }
+}
+
+// common laoding style
+.loading {
+  img {
+    display: block;
+    margin: 5rem auto;
+  }
+}
+
+// new post form styles
+.new-article {
+  h3 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .article-form {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 500px) {
+      padding: 10px 4px;
+    }
+    input {
+      padding: 5px 3px;
+      margin-bottom: 1rem;
+    }
+    button {
+      cursor: pointer;
+      width: 150px;
+      margin: 1rem auto 0 auto;
+      padding: 8px;
+      font-weight: 500;
+      font-size: 1rem;
+      background-color: teal;
+      color: white;
+      border: none;
+    }
   }
 }

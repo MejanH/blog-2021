@@ -5,7 +5,9 @@ import { Post } from "../models/post";
 const blogRouter = express.Router();
 
 blogRouter.get("/blog", async (req: Request, res: Response) => {
-  return res.send("all posts");
+  await Post.find()
+    .then((posts) => res.status(200).send(posts))
+    .catch((err) => res.status(400).send(err));
 });
 
 blogRouter.post("/blog/new", async (req: Request, res: Response) => {
@@ -33,14 +35,14 @@ blogRouter.get("/blog/:id", async (req: Request, res: Response) => {
 
 blogRouter.put("/blog/edit/:id", async (req: Request, res: Response) => {
   const ID = req.params.id;
-  Post.updateOne({ _id: ID }, req.body)
+  await Post.updateOne({ _id: ID }, req.body)
     .then(() => res.status(200).send("Post udpated successfully"))
     .catch((err) => res.status(400).send(err));
 });
 
 blogRouter.delete("/blog/delete/:id", async (req: Request, res: Response) => {
   const ID = req.params.id;
-  Post.findByIdAndDelete(ID)
+  await Post.findByIdAndDelete(ID)
     .then(() => res.status(200).send("Deleted Successfully"))
     .catch((err) => res.status(400).send(err));
 });
