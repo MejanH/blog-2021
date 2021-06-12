@@ -13,3 +13,4 @@ Just a simple blog crud project to show my experience to clients.
 - Typescript
 - **Backend**: Expressjs, Mongoose
 - **Frontend**: Reactjs, Sass
+- **Unit Testing**: Jest, Supertest
