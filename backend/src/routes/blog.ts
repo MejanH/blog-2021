@@ -14,8 +14,8 @@ blogRouter.post("/blog/new", async (req: Request, res: Response) => {
   const post: PostType = new Post(req.body);
   await post
     .save()
-    .then(() => {
-      res.status(200).send("Your Blog Post Created Successfully.");
+    .then((newPost) => {
+      res.status(200).send(newPost);
     })
     .catch((err) => {
       res.status(400).send(err);
